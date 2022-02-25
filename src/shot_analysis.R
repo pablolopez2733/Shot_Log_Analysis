@@ -68,3 +68,12 @@ logistic_model <- glm(FGM ~
                       family = binomial(),
                       train)
 summary(logistic_model)
+
+# Predict shots
+test$pred_prob <- predict(logistic_model,
+                               newdata = test,
+                               type = "response")
+
+
+
+
